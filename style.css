@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    /* Theme 1 */
+    --main_back: hsl(222, 26%, 31%);
+    --tk_back: hsl(223, 31%, 20%);
+    --scr_back: hsl(224, 36%, 15%);
+
+    /* Keys */
+    --key_back: hsl(225, 21%, 49%);
+    --key_shad: hsl(224, 28%, 35%);
+    --kb_toggle: hsl(6, 63%, 50%);
+    --key_shad2: hsl(6, 70%, 34%);
+    --key_back2: hsl(30, 25%, 89%);
+    --key_shad3: hsl(28, 16%, 65%);
+    --nav:var(--White);
+    /* Text */
+    --text: hsl(221, 14%, 31%);
+    --White: hsl(0, 0%, 100%);
+    --Fs_num: 32px;
+    --k_back_hover: hsl(204, 12%, 58%);
+    --k_back_hover2:hsl(7, 59%, 62%);
+    --kb_hover:var(--nav);
+
+}
+
+/* Define classes for different themes */
+body.theme2 {
+    /* Theme 2 */
+    --main_back: hsl(0, 0%, 90%);
+    --tk_back: hsl(0, 5%, 81%);
+    --scr_back: hsl(0, 0%, 93%);
+    --key_back: hsl(185, 42%, 37%);
+    --key_shad: hsl(185, 58%, 25%);
+    --kb_toggle: hsl(25, 98%, 40%);
+    --key_shad2: hsl(25, 99%, 27%);
+    --key_back2: hsl(45, 7%, 89%);
+    --key_shad3: hsl(35, 11%, 61%);
+    --text: hsl(60, 10%, 19%);
+    --White: hsl(0, 0%, 100%);
+    --nav:var(--text);
+    --k_back_hover: hsla(185, 42%, 37%,0.7);
+    --k_back_hover2:hsla(25, 98%, 40%,0.7) ;
+    --kb_hover:var(--White);
+}   
+
+body.theme3 {
+    /* Theme 3 */
+    --main_back: hsl(268, 75%, 9%);
+    --tk_back: hsl(268, 71%, 12%);
+    --scr_back: hsl(268, 71%, 12%);
+    --key_back: hsl(281, 89%, 26%);
+    --key_shad: hsl(285, 91%, 52%);
+    --kb_toggle: hsl(176, 100%, 44%);
+    --key_shad2: hsl(177, 92%, 70%);
+    --key_back2: hsl(268, 47%, 21%);
+    --key_shad3: hsl(290, 70%, 36%);
+    --text: hsl(52, 100%, 62%);
+    --vd_blue: hsl(198, 20%, 13%);
+    --White: hsl(0, 0%, 100%);
+    --nav:var(--text);
+    --k_back_hover: hsla(290, 70%, 36%, 0.7);
+    --k_back_hover2: hsla(176, 100%, 44%,0.9);
+    --kb_hover:hsl(281, 87%, 27%);
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-size: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--main_back);
+}
+
+.container {
+    width: 400px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    align-self: flex-end;
+    font-size: 1.25rem;
+    color: var(--nav);
+}
+
+nav > .theme {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.theme h4 {
+    align-self: flex-end;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--nav);
+}
+
+.switch_theme {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.switch_theme > .theme_num > ul {
+    display: flex;
+    width: 50px;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5px;
+    color: var(--nav);
+    font-family: "League Spartan", sans-serif;
+}
+
+.theme_img {
+    background: var(--tk_back);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 20px;
+    position: relative;
+}
+
+.theme_img > #img {
+    background: var(--kb_toggle);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border-style: none;
+    position: absolute;
+    transition: left 0.3s;
+    cursor: pointer;
+}
+
+#img:hover{
+    background: var(--k_back_hover2);
+}
+.theme_img.theme1 > #img {
+    left: 5px;
+}
+
+.theme_img.theme2 > #img {
+    left: calc(50% - 6px);
+}
+
+.theme_img.theme3 > #img {
+    left: calc(100% - 17px);
+}
+
+.container .displays {
+    height: 100px;
+    background-color: var(--scr_back);
+    border-radius: 16px;
+    font-size: var(--Fs_num);
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
+
+.container .displays h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--nav);
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: right;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+.container > .inputs {
+    height: 350px;
+    background: var(--tk_back);
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(5, 50px);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.inputs input {
+    height: 40px;
+    border-radius: 8px;
+    border-style: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: var(--key_back2);
+    box-shadow: 0 3px  var(--key_shad3);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    -webkit-transition: background-color 0.3s ease, transform 0.1s ease;
+    -moz-transition: background-color 0.3s ease, transform 0.1s ease;
+    -ms-transition: background-color 0.3s ease, transform 0.1s ease;
+    -o-transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+input:hover, input:active{
+    background: var(--kb_hover);
+    transform: scale(0.98);
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+}
+
+input.resize {
+    font-size: 1rem;
+}
+
+input.span {
+    grid-column: 1/3;
+}
+
+input.key_style2 {
+    background: var(--key_back);
+    font-size: 1.2rem;
+    color: var(--White);
+    box-shadow: 0 3px  var(--key_shad);
+
+}
+
+input.key_style2:hover{
+    background: var(--k_back_hover);
+}
+
+input#key_style3 {
+    grid-column: 3/5;
+    background: var(--kb_toggle);
+    color: var(--White);
+    box-shadow: 0 3px var(--key_shad2);
+
+}
+
+input#key_style3:hover{
+    background: var(--k_back_hover2);
+}
+
+@media(width <= 600px){
+    .container {
+        width: 300px;
+    }
+
+    .container > .inputs {
+        grid-template-columns: repeat(4, 55px);
+        grid-template-rows: repeat(5, 60px);
+        height: 400px;
+        gap: 16px;
+    }
+
+    .inputs input {
+        height: 60px;
+    }
+
+    .displays h1{
+        font-size: 2rem;
+    }
+}
+
